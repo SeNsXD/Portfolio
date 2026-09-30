@@ -17,7 +17,7 @@ export function ContactForm() {
     const email = String(data.get('email') ?? '').trim()
     const message = String(data.get('message') ?? '').trim()
     const subject = `Portfolio enquiry from ${name}`
-    const body = `${message}\n\n— ${name} (${email})`
+    const body = `${message}\n\n${name} (${email})`
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setStatus('opened')
   }
@@ -54,7 +54,7 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="group mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-6 font-medium text-primary-foreground transition-all duration-300 hover:brightness-110 hover:shadow-[0_14px_40px_-10px_var(--brand)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.98]"
+        className="group mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-brand px-6 font-medium text-primary-foreground transition-all duration-300 hover:brightness-110 hover:shadow-[0_14px_40px_-10px_var(--brand)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.98]"
       >
         Send Message
         <Send className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />

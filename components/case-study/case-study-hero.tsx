@@ -12,7 +12,7 @@ import { Tag, TagList } from '../tag'
 export function CaseStudyHero({ project }: { project: Project }) {
   return (
     <section aria-labelledby="case-title" className="relative isolate overflow-hidden pt-28 sm:pt-36">
-      <HeroBackground />
+      <HeroBackground accent={project.accent} />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <Link

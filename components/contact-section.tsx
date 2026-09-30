@@ -16,7 +16,7 @@ export function ContactSection() {
     <section id="contact" aria-labelledby="contact-title" className="relative isolate overflow-hidden py-24 sm:py-32">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[420px] w-[900px] -translate-x-1/2 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,oklch(0.72_0.19_48/0.18),transparent)] blur-2xl"
+        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[420px] w-[900px] -translate-x-1/2 translate-y-1/3 rounded-full bg-[radial-gradient(closest-side,oklch(0.67_0.20_285/0.18),oklch(0.70_0.19_255/0.10),transparent)] blur-2xl"
       />
       <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <div>

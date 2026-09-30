@@ -12,7 +12,7 @@ export function Tag({
   return (
     <li
       className={cn(
-        'inline-flex items-center rounded-full border border-border bg-white/[0.03] px-3 py-1 text-xs text-muted-foreground transition-colors duration-300 hover:border-brand/40 hover:bg-brand-soft hover:text-foreground',
+        'inline-flex items-center rounded-lg border border-border bg-white/[0.03] px-3 py-1 text-xs text-muted-foreground transition-colors duration-300 hover:border-brand/40 hover:bg-brand-soft hover:text-foreground',
         tone === 'mono' && 'font-mono tracking-tight',
         className,
       )}

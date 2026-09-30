@@ -26,7 +26,7 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             <span>{project.platforms.join(' · ')}</span>
             {project.version && (
-              <span className="ml-auto rounded-full border border-border px-2.5 py-0.5 normal-case tracking-normal text-foreground/80">
+              <span className="ml-auto rounded-lg border border-border px-2.5 py-0.5 normal-case tracking-normal text-foreground/80">
                 v. {project.version}
               </span>
             )}

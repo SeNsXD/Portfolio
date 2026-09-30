@@ -26,7 +26,7 @@ export function LinkButton({ className, variant = 'primary', size = 'md', ...pro
   return (
     <Link
       className={cn(
-        'group inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.98]',
+        'group inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.98]',
         variants[variant],
         sizes[size],
         className,

@@ -44,7 +44,7 @@ export const projects: Project[] = [
     version: 'Ignite',
     description:
       'A complete fitness companion designed around fast workout logging, progress tracking and a premium distraction-free experience.',
-    accent: 'oklch(0.72 0.19 48)',
+    accent: 'oklch(0.70 0.19 255)',
     platforms: ['Android'],
     features: [
       'Workout Tracking',
@@ -61,23 +61,23 @@ export const projects: Project[] = [
     visual: 'dual-phone',
     logo: '/projects/gymbros/gymbros-app-icon.png',
     screenshots: [
-      { src: '/projects/gymbros/gymbros-home.png', alt: 'GymBros home screen with daily quest, workout streak, activity rings and water intake', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-workout.png', alt: 'GymBros workout and performance screen with weekly streak and training summary', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-performance.png', alt: 'GymBros performance screen showing 7-day momentum and training volume', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-progress.png', alt: 'GymBros progress screen with weight goal, weight graph and photo timeline', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-hydration.png', alt: 'GymBros water screen with daily intake, quick-add buttons and weekly chart', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-spotify.png', alt: 'GymBros in-app Spotify player showing the currently playing track', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-stats.png', alt: 'GymBros stats screen with level, quest milestones, badges and totals', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-fitness-toolbox.png', alt: 'GymBros fitness toolbox with calorie, BMI, protein and weight-loss calculators', kind: 'framed' },
-      { src: '/projects/gymbros/gymbros-backup.png', alt: 'GymBros backup and sync settings with automatic cloud backup', kind: 'card' },
+      { src: '/projects/gymbros/gymbros-home.webp', alt: 'GymBros UI 2.0 home screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-now-playing.webp', alt: 'GymBros UI 2.0 now playing screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-water.webp', alt: 'GymBros UI 2.0 water tracking screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-workout.webp', alt: 'GymBros UI 2.0 workout screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-performance.webp', alt: 'GymBros UI 2.0 performance screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-past-workouts.webp', alt: 'GymBros UI 2.0 past workouts screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-add-exercise.webp', alt: 'GymBros UI 2.0 add exercise screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-progress.webp', alt: 'GymBros UI 2.0 progress screen', kind: 'phone' },
+      { src: '/projects/gymbros/gymbros-profile.webp', alt: 'GymBros UI 2.0 profile screen', kind: 'phone' },
     ],
     caseStudy: {
       overview:
-        'GymBros is an Android fitness companion built for people who want to log workouts quickly and see their progress clearly — without ads, clutter or friction between sets.',
+        'GymBros is an Android fitness companion built for people who want to log workouts quickly and see their progress clearly, without ads, clutter or friction between sets.',
       problem:
         'Many workout apps feel slow at the moment it matters most: in the middle of a session. Logging a set often takes too many taps, and the screen is crowded with features that get in the way of training.',
       idea:
-        'Design a focused, premium training companion where logging is the fastest action on screen, progress is visible at a glance, and the extras — music, hydration, backup — support the workout instead of competing with it.',
+        'Design a focused, premium training companion where logging is the fastest action on screen, progress is visible at a glance, and the extras like music, hydration and backup support the workout instead of competing with it.',
       built: [
         'A fast workout logger for strength and cardio sessions',
         'Progress views that surface history and trends per exercise',
@@ -95,7 +95,7 @@ export const projects: Project[] = [
         { title: 'Cloud Backup', description: 'Keep workout data safe and restorable across devices.' },
       ],
       designProcess: [
-        { step: 'Define', description: 'Identified the core loop — start workout, log set, rest, repeat — and made it the priority.' },
+        { step: 'Define', description: 'Identified the core loop: start workout, log set, rest, repeat, and made it the priority.' },
         { step: 'Design', description: 'Built a dark, high-contrast interface with large touch targets for use between sets.' },
         { step: 'Build', description: 'Implemented the UI in Jetpack Compose with Firebase for auth, data and backup.' },
         { step: 'Iterate', description: 'Refined flows based on real usage during training sessions.' },
@@ -154,7 +154,7 @@ export const projects: Project[] = [
       problem:
         'Useful information and controls are often buried inside apps. Stock widgets are limited, inconsistent in style, and rarely fit together as a cohesive home screen.',
       idea:
-        'Build one platform that offers a family of well-designed widgets — media, notifications, hydration, playlists — sharing a consistent visual language and themes.',
+        'Build one platform that offers a family of well-designed widgets for media, notifications, hydration and playlists, all sharing a consistent visual language and themes.',
       built: [
         'A media widget with playback controls and now-playing info',
         'Notification history for reviewing dismissed notifications',

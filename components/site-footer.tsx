@@ -31,6 +31,6 @@ export function SiteFooter() {
           ))}
         </ul>
       </div>
-    </footer>
+    <div className="mx-auto max-w-6xl px-5 pb-6 text-sm text-muted-foreground"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></div></footer>
   )
 }

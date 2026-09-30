@@ -11,7 +11,7 @@ export function AboutSection() {
         <Reveal className="group relative mx-auto w-full max-w-sm lg:max-w-none">
           <div
             aria-hidden="true"
-            className="absolute -inset-4 rounded-[2.5rem] bg-[radial-gradient(closest-side,oklch(0.72_0.19_48/0.18),transparent)] blur-2xl"
+            className="absolute -inset-4 rounded-[2.5rem] bg-[radial-gradient(closest-side,oklch(0.70_0.19_255/0.16),oklch(0.67_0.20_295/0.10),transparent)] blur-2xl"
           />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border bg-card">
             <Image

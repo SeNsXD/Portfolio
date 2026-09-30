@@ -38,26 +38,26 @@
 
 :root {
   color-scheme: dark;
-  --background: oklch(0.145 0.004 60);
-  --foreground: oklch(0.97 0.003 60);
-  --card: oklch(0.18 0.004 60);
-  --card-foreground: oklch(0.97 0.003 60);
-  --popover: oklch(0.18 0.004 60);
-  --popover-foreground: oklch(0.97 0.003 60);
-  --primary: oklch(0.72 0.19 48);
-  --primary-foreground: oklch(0.16 0.02 48);
-  --secondary: oklch(0.22 0.004 60);
-  --secondary-foreground: oklch(0.97 0.003 60);
-  --muted: oklch(0.22 0.004 60);
-  --muted-foreground: oklch(0.7 0.006 60);
-  --accent: oklch(0.24 0.006 60);
-  --accent-foreground: oklch(0.97 0.003 60);
+  --background: oklch(0.145 0.012 270);
+  --foreground: oklch(0.97 0.006 270);
+  --card: oklch(0.18 0.012 270);
+  --card-foreground: oklch(0.97 0.006 270);
+  --popover: oklch(0.18 0.012 270);
+  --popover-foreground: oklch(0.97 0.006 270);
+  --primary: oklch(0.70 0.19 255);
+  --primary-foreground: oklch(0.15 0.025 255);
+  --secondary: oklch(0.22 0.016 275);
+  --secondary-foreground: oklch(0.97 0.006 270);
+  --muted: oklch(0.22 0.014 275);
+  --muted-foreground: oklch(0.72 0.018 270);
+  --accent: oklch(0.24 0.035 285);
+  --accent-foreground: oklch(0.97 0.006 270);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 9%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.72 0.19 48);
-  --brand: oklch(0.72 0.19 48);
-  --brand-soft: oklch(0.72 0.19 48 / 14%);
+  --ring: oklch(0.70 0.19 255);
+  --brand: oklch(0.70 0.19 255);
+  --brand-soft: oklch(0.67 0.20 285 / 16%);
   --radius: 0.75rem;
 }
 
@@ -73,7 +73,7 @@
     @apply bg-background text-foreground font-sans;
   }
   ::selection {
-    background: oklch(0.72 0.19 48 / 35%);
+    background: oklch(0.67 0.20 275 / 35%);
   }
 }
 
@@ -128,6 +128,121 @@
   }
   .animate-glow-drift,
   .animate-grid-pan {
+    animation: none;
+  }
+}
+
+/* GymBros moving phone mockups; mirrors the supplied NEW MOCKUPS animation. */
+.gymbros-moving-showcase {
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  border-radius: 2rem;
+  background: hsl(var(--card) / .28);
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+.gymbros-moving-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 2.2rem);
+  align-items: start;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.gymbros-moving-device:nth-child(3n + 2) {
+  transform: translateY(42px);
+}
+
+.gymbros-moving-phone {
+  position: relative;
+  padding: 6px;
+  border-radius: 42px;
+  border: 1px solid rgb(255 255 255 / .10);
+  background: #0b0b0b;
+  box-shadow: 0 30px 80px -20px rgb(0 0 0 / .8), inset 0 0 0 1px rgb(255 255 255 / .04);
+}
+
+.gymbros-moving-screen {
+  position: relative;
+  aspect-ratio: 1080 / 2400;
+  overflow: hidden;
+  border-radius: 37px;
+  background: #0a0b10;
+}
+
+.gymbros-moving-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  animation: gymbros-screen-scroll 15s ease-in-out infinite;
+  animation-delay: var(--mockup-delay, 0s);
+  will-change: transform;
+}
+
+.gymbros-moving-device.is-still .gymbros-moving-image {
+  animation: none;
+}
+
+.gymbros-moving-device:hover .gymbros-moving-image {
+  animation-play-state: paused;
+}
+
+.gymbros-camera-dot {
+  position: absolute;
+  z-index: 2;
+  top: 11px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 999px;
+  background: #000;
+  box-shadow: 0 0 0 2px #0b0c10;
+}
+
+@keyframes gymbros-screen-scroll {
+  0%,
+  14% {
+    transform: translateY(0);
+  }
+  46%,
+  62% {
+    transform: translateY(calc(var(--mockup-shift) * -1));
+  }
+  94%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .gymbros-moving-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 620px;
+  }
+  .gymbros-moving-device:nth-child(3n + 2) {
+    transform: none;
+  }
+  .gymbros-moving-device:nth-child(even) {
+    transform: translateY(30px);
+  }
+}
+
+@media (max-width: 620px) {
+  .gymbros-moving-grid {
+    grid-template-columns: 1fr;
+    max-width: 310px;
+    gap: 1.4rem;
+  }
+  .gymbros-moving-device:nth-child(even) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gymbros-moving-image {
     animation: none;
   }
 }

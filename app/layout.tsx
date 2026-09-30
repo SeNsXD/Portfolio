@@ -8,16 +8,16 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Rishabh Kumar — Product Builder & Android Developer',
-    template: '%s — Rishabh Kumar',
+    default: 'Rishabh Kumar | Product Builder & Android Developer',
+    template: '%s | Rishabh Kumar',
   },
   description:
-    'Portfolio of Rishabh Kumar, a product-focused developer designing and building useful Android experiences — including GymBros and WidgetLabs.',
+    'Portfolio of Rishabh Kumar, a product-focused developer designing and building useful Android experiences, including GymBros and WidgetLabs.',
   authors: [{ name: 'Rishabh Kumar' }],
   keywords: ['Rishabh Kumar', 'Android Developer', 'Kotlin', 'Jetpack Compose', 'Product Builder', 'WinUI 3', 'Portfolio'],
   openGraph: {
-    title: 'Rishabh Kumar — Product Builder & Android Developer',
-    description: 'I build ideas into working products.',
+    title: 'Rishabh Kumar | Product Builder & Android Developer',
+    description: 'I design and build polished Android products from idea to release.',
     type: 'website',
   },
   icons: {

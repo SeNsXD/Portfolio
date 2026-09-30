@@ -13,7 +13,7 @@ export function HeroSection() {
       <HeroBackground />
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
-          <p className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.03] px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+          <p className="inline-flex items-center gap-2 rounded-lg border border-border bg-white/[0.03] px-3 py-1 text-xs text-muted-foreground backdrop-blur">
             <span aria-hidden="true" className="size-1.5 rounded-full bg-brand" />
             {site.role}
           </p>
@@ -24,16 +24,14 @@ export function HeroSection() {
             id="hero-title"
             className="mt-8 max-w-4xl text-balance text-5xl font-semibold leading-[1.02] tracking-tighter text-foreground sm:text-7xl lg:text-8xl"
           >
-            I build ideas into{' '}
-            <span className="bg-gradient-to-br from-[oklch(0.82_0.16_60)] via-brand to-[oklch(0.62_0.2_38)] bg-clip-text text-transparent">
-              working products.
-            </span>
+            I design and build{' '}
+            <span className="text-brand">Android products.</span>
           </h1>
         </Reveal>
 
         <Reveal delay={160}>
           <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            {"I'm Rishabh Kumar, a product-focused developer who enjoys designing and building useful digital experiences across Android and Windows."}
+            {"I'm Rishabh Kumar. I turn product ideas into polished Android apps, from interface design and feature planning to working releases."}
           </p>
         </Reveal>
 

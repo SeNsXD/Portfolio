@@ -58,7 +58,7 @@ export function SiteHeader() {
           <span className="text-muted-foreground">/ {site.handle}</span>
         </Link>
 
-        <ul className="hidden items-center gap-1 rounded-full border border-border bg-white/[0.03] p-1 md:flex">
+        <ul className="hidden items-center gap-1 rounded-xl border border-border bg-white/[0.03] p-1 md:flex">
           {navItems.map((item) => {
             const isActive = active === item.id
             return (
@@ -67,7 +67,7 @@ export function SiteHeader() {
                   href={hrefFor(item.id)}
                   aria-current={isActive ? 'true' : undefined}
                   className={cn(
-                    'block rounded-full px-4 py-1.5 text-sm transition-colors duration-300',
+                    'block rounded-lg px-4 py-1.5 text-sm transition-colors duration-300',
                     isActive ? 'bg-white/[0.08] text-foreground' : 'text-muted-foreground hover:text-foreground',
                   )}
                 >
@@ -83,7 +83,7 @@ export function SiteHeader() {
             href={site.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden h-9 items-center rounded-full bg-brand px-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:brightness-110 hover:shadow-[0_8px_24px_-8px_var(--brand)] sm:inline-flex"
+            className="hidden h-9 items-center rounded-lg bg-brand px-4 text-sm font-medium text-primary-foreground transition-all duration-300 hover:brightness-110 hover:shadow-[0_8px_24px_-8px_var(--brand)] sm:inline-flex"
           >
             Resume
           </a>
@@ -121,7 +121,7 @@ export function SiteHeader() {
           href={site.resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-full bg-brand text-sm font-medium text-primary-foreground"
+          className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-lg bg-brand text-sm font-medium text-primary-foreground"
         >
           Resume
         </a>

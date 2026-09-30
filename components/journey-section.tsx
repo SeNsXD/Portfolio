@@ -4,7 +4,7 @@ import { SectionHeading } from './section-heading'
 const milestones = [
   { period: '2026', title: 'Building GymBros & WidgetLabs', current: true },
   { period: '2025', title: 'Digital Marketing & Business Projects' },
-  { period: '2022–2025', title: 'BBA — Amity University Kolkata' },
+  { period: '2022-2025', title: 'BBA, Amity University Kolkata' },
 ]
 
 export function JourneySection() {
