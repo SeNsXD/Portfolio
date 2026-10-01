@@ -51,7 +51,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
                 <p>Project {project.index}</p>
                 <p className="mt-1">
                   {project.platforms.join(' · ')}
-                  {project.version && <span className="text-foreground/80"> · v. {project.version}</span>}
+                  {project.status ? <span style={{ color: project.accent }}> · {project.status}</span> : project.version && <span className="text-foreground/80"> · v. {project.version}</span>}
                 </p>
               </div>
             </Reveal>
@@ -67,10 +67,16 @@ export function CaseStudyHero({ project }: { project: Project }) {
           </div>
 
           <Reveal delay={180} className="flex flex-wrap gap-3 lg:justify-end">
-            <LinkButton href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="secondary" size="lg">
-              <GitHubIcon className="size-4" />
-              GitHub
-            </LinkButton>
+            {project.githubUrl ? (
+              <LinkButton href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="secondary" size="lg">
+                <GitHubIcon className="size-4" />
+                GitHub
+              </LinkButton>
+            ) : project.status && (
+              <span className="inline-flex h-11 items-center rounded-xl border px-5 font-mono text-xs uppercase tracking-[0.16em]" style={{ borderColor: project.accent, color: project.accent }}>
+                ● {project.status}
+              </span>
+            )}
             {project.apkUrl && (
               <LinkButton href={project.apkUrl} target="_blank" rel="noopener noreferrer" size="lg">
                 <Download className="size-4" aria-hidden="true" />

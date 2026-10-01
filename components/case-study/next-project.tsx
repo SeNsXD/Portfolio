@@ -10,19 +10,35 @@ export function NextProject({ project, next }: { project: Project; next: Project
     <section aria-label="Project links" className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8">
       <Reveal className="flex flex-col items-start justify-between gap-6 rounded-[2rem] border border-border bg-card/50 p-8 sm:flex-row sm:items-center sm:p-10">
         <div>
-          <h2 className="text-2xl font-semibold text-foreground">Explore the code</h2>
-          <p className="mt-2 text-muted-foreground">Source and releases for {project.name} are on GitHub.</p>
+          {project.githubUrl ? (
+            <>
+              <h2 className="text-2xl font-semibold text-foreground">Explore the code</h2>
+              <p className="mt-2 text-muted-foreground">Source and releases for {project.name} are on GitHub.</p>
+            </>
+          ) : (
+            <>
+              <h2 className="text-2xl font-semibold text-foreground">Currently in development</h2>
+              <p className="mt-2 text-muted-foreground">{project.name} is actively being built for Windows and Android.</p>
+            </>
+          )}
         </div>
         <div className="flex flex-wrap gap-3">
-          <LinkButton href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="secondary">
-            <GitHubIcon className="size-4" />
-            GitHub
-          </LinkButton>
+          {project.githubUrl && (
+            <LinkButton href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="secondary">
+              <GitHubIcon className="size-4" />
+              GitHub
+            </LinkButton>
+          )}
           {project.apkUrl && (
             <LinkButton href={project.apkUrl} target="_blank" rel="noopener noreferrer">
               <Download className="size-4" aria-hidden="true" />
               Download APK
             </LinkButton>
+          )}
+          {!project.githubUrl && !project.apkUrl && (
+            <span className="inline-flex items-center rounded-full border border-border bg-background/50 px-5 py-3 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+              ● In Development
+            </span>
           )}
         </div>
       </Reveal>

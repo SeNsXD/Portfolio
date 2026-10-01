@@ -16,7 +16,8 @@ export type Project = {
   platforms: string[]
   features: string[]
   tech: string[]
-  githubUrl: string
+  githubUrl?: string
+  status?: string
   apkUrl?: string
   logo?: string
   visual: 'dual-phone' | 'phone-duo' | 'laptop-phone'
@@ -189,6 +190,74 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    slug: 'flick',
+    index: '03',
+    name: 'Flick',
+    subtitle: 'Windows ↔ Android Local File Sharing',
+    status: 'In Development',
+    description:
+      'A cross-platform file-sharing experience for moving files, folders and clipboard content directly between Windows and Android devices on the same local network.',
+    accent: 'oklch(0.68 0.23 315)',
+    platforms: ['Windows', 'Android'],
+    features: [
+      'Local Wi-Fi Transfer',
+      'Device Discovery',
+      'Files & Folders',
+      'Clipboard Sharing',
+      'Transfer History',
+      'Windows Integration',
+    ],
+    tech: ['Kotlin', 'WinUI 3', 'UDP Discovery', 'TCP Transfer'],
+    visual: 'laptop-phone',
+    logo: '/projects/flick/flick-logo.png',
+    screenshots: [
+      { src: '/projects/flick/flick-home.png', alt: 'Flick Windows transfer home with connected Android device and active file transfer', kind: 'card' },
+      { src: '/projects/flick/flick-history.png', alt: 'Flick Windows transfer history showing received files', kind: 'card' },
+      { src: '/projects/flick/flick-preferences.png', alt: 'Flick Windows preferences with Windows and File Explorer integration settings', kind: 'card' },
+    ],
+    caseStudy: {
+      overview:
+        'Flick is an in-development Windows and Android app focused on making device-to-device file sharing feel immediate. It discovers nearby devices on the local network and transfers content directly without routing files through cloud storage.',
+      problem:
+        'Moving a file from a phone to a Windows PC often means reaching for a cable, uploading it somewhere first, or working through a multi-step sharing flow.',
+      idea:
+        'Create a focused desktop-and-mobile experience where nearby devices discover each other automatically and sending a file feels as simple as choosing it, dropping it, or sharing it to Flick.',
+      built: [
+        'Local device discovery and pairing between Windows and Android',
+        'Direct file and folder transfers over the same Wi-Fi network',
+        'Clipboard sharing between connected devices',
+        'Transfer queue, progress, cancellation and duplicate-file handling',
+        'Transfer history with quick access to received files',
+        'Windows notifications, startup/tray behaviour and File Explorer integration work',
+      ],
+      featureDetails: [
+        { title: 'Local Transfers', description: 'Send directly between your PC and phone over the local network.' },
+        { title: 'Device Discovery', description: 'Find and connect nearby Flick devices without manually entering addresses.' },
+        { title: 'Files & Folders', description: 'Move individual files, multiple selections or complete folders.' },
+        { title: 'Clipboard Sharing', description: 'Send supported clipboard content from one connected device to the other.' },
+        { title: 'Transfer History', description: 'Review completed transfers and jump straight to received files.' },
+        { title: 'Windows Integration', description: 'Tray behaviour, notifications and File Explorer integration make Flick feel native on PC.' },
+      ],
+      designProcess: [
+        { step: 'Connect', description: 'Built local discovery and pairing first so devices could reliably find each other.' },
+        { step: 'Transfer', description: 'Added direct TCP transfers, progress handling, queues and duplicate protection.' },
+        { step: 'Integrate', description: 'Extended the Windows experience with notifications, preferences and Explorer integration.' },
+        { step: 'Refine', description: 'Continued simplifying the Android and Windows flows while testing transfers between real devices.' },
+      ],
+      challenges: [
+        { title: 'Cross-platform state', description: 'Keeping Android and Windows in sync while connections and transfers change in real time.' },
+        { title: 'Reliable transfers', description: 'Handling cancellation, duplicates, interrupted sessions and multiple queued files cleanly.' },
+        { title: 'Native integration', description: 'Making system notifications, tray behaviour and File Explorer actions feel like part of Windows.' },
+      ],
+      learnings: [
+        'Cross-platform products need the connection state to be understandable on both devices.',
+        'Transfer UX is as much about failure and recovery states as raw transfer speed.',
+        'Small operating-system integrations can make a utility feel dramatically more native.',
+      ],
+    },
+  },
+
 ]
 
 export function getProject(slug: string) {

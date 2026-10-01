@@ -113,7 +113,20 @@ export function ProjectVisual({
             <PhoneMockup src={phones[1].src} alt={phones[1].alt} className="w-[38%] max-w-[215px] -translate-y-10 opacity-90" />
           </div>
         )}
-        {project.visual === 'laptop-phone' && (
+        {project.visual === 'laptop-phone' && project.slug === 'flick' && (
+          <div className="relative mx-auto w-full max-w-[900px]">
+            <Image
+              src="/projects/flick/flick-laptop-phone-transparent.png"
+              alt="Flick running across Windows and Android"
+              width={1792}
+              height={1024}
+              priority={priority}
+              sizes="(min-width: 1024px) 900px, 95vw"
+              className="h-auto w-full object-contain drop-shadow-[0_30px_65px_rgba(154,45,255,0.20)]"
+            />
+          </div>
+        )}
+        {project.visual === 'laptop-phone' && project.slug !== 'flick' && (
           <div className="relative mx-auto w-full max-w-[560px] pb-6 pr-6 sm:pr-10">
             <LaptopMockup src={desktops[0].src} alt={desktops[0].alt} priority={priority} className="w-[88%]" />
             <PhoneMockup

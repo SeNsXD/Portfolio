@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/lib/projects'
@@ -25,16 +26,32 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
             <span style={{ color: project.accent }}>{project.index}</span>
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             <span>{project.platforms.join(' · ')}</span>
-            {project.version && (
+            {project.status ? (
+              <span className="ml-auto rounded-lg border px-2.5 py-0.5 normal-case tracking-normal" style={{ borderColor: project.accent, color: project.accent }}>
+                {project.status}
+              </span>
+            ) : project.version && (
               <span className="ml-auto rounded-lg border border-border px-2.5 py-0.5 normal-case tracking-normal text-foreground/80">
                 v. {project.version}
               </span>
             )}
           </div>
 
-          <h3 id={titleId} className="mt-8 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            {project.name}
-          </h3>
+          <div className="mt-8 flex items-center gap-4">
+            {project.logo && (
+              <Image
+                src={project.logo}
+                alt={`${project.name} app icon`}
+                width={52}
+                height={52}
+                className="size-12 rounded-xl border border-white/10 object-cover shadow-[0_10px_30px_-12px_var(--project-accent)] sm:size-[52px]"
+                style={{ ['--project-accent' as string]: project.accent }}
+              />
+            )}
+            <h3 id={titleId} className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+              {project.name}
+            </h3>
+          </div>
           <p className="mt-2 text-base font-medium" style={{ color: project.accent }}>
             {project.subtitle}
           </p>
@@ -63,16 +80,18 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
               View Project
               <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
             </LinkButton>
-            <LinkButton
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="secondary"
-              aria-label={`${project.name} on GitHub`}
-            >
-              <GitHubIcon className="size-4" />
-              GitHub
-            </LinkButton>
+            {project.githubUrl && (
+              <LinkButton
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                aria-label={`${project.name} on GitHub`}
+              >
+                <GitHubIcon className="size-4" />
+                GitHub
+              </LinkButton>
+            )}
           </div>
         </div>
 

@@ -15,6 +15,21 @@ export function ScreenshotGallery({ project }: { project: Project }) {
   return (
     <CaseSection eyebrow="Screens" title="A look inside" accent={project.accent}>
       <div className="flex flex-col gap-6">
+        {project.slug === 'flick' && (
+          <Reveal className="overflow-hidden rounded-[2rem] border border-border bg-black/30">
+            <div className="px-6 pt-7 sm:px-10 sm:pt-9">
+              <p className="font-mono text-xs uppercase tracking-[0.18em]" style={{ color: project.accent }}>Android companion</p>
+              <h3 className="mt-2 text-2xl font-semibold text-foreground">Built for both sides of the transfer</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">The Android interface stays focused on nearby devices, quick send actions and transfer status.</p>
+            </div>
+            <iframe
+              src="/projects/flick/phones.html"
+              title="Animated Flick Android phone mockups"
+              className="mt-2 h-[430px] w-full border-0 bg-[#05070b] sm:h-[650px]"
+              loading="lazy"
+            />
+          </Reveal>
+        )}
         {desktops.length > 0 && (
           <div className="grid gap-6 md:grid-cols-2">
             {desktops.map((s, i) => (
