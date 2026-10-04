@@ -63,7 +63,7 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
             ))}
           </TagList>
 
-          <div className="mt-8 border-t border-border pt-6">
+          {project.tech.length > 0 && <div className="mt-8 border-t border-border pt-6">
             <p className="sr-only">Technology</p>
             <p className="font-mono text-xs text-muted-foreground">
               {project.tech.map((t, i) => (
@@ -73,7 +73,7 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
                 </span>
               ))}
             </p>
-          </div>
+          </div>}
 
           <div className="mt-auto flex flex-wrap gap-3 pt-8">
             <LinkButton href={`/projects/${project.slug}`} aria-label={`View ${project.name} case study`}>

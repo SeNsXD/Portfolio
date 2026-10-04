@@ -15,6 +15,11 @@ export function NextProject({ project, next }: { project: Project; next: Project
               <h2 className="text-2xl font-semibold text-foreground">Explore the code</h2>
               <p className="mt-2 text-muted-foreground">Source and releases for {project.name} are on GitHub.</p>
             </>
+          ) : project.slug === 'recall' ? (
+            <>
+              <h2 className="text-2xl font-semibold text-foreground">Your Second Memory</h2>
+              <p className="mt-2 text-muted-foreground">Save what matters. Find it when you need it.</p>
+            </>
           ) : (
             <>
               <h2 className="text-2xl font-semibold text-foreground">Currently in development</h2>
@@ -35,7 +40,7 @@ export function NextProject({ project, next }: { project: Project; next: Project
               Download APK
             </LinkButton>
           )}
-          {!project.githubUrl && !project.apkUrl && (
+          {!project.githubUrl && !project.apkUrl && project.slug !== 'recall' && (
             <span className="inline-flex items-center rounded-full border border-border bg-background/50 px-5 py-3 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
               ● In Development
             </span>

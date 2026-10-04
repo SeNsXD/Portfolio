@@ -20,7 +20,8 @@ export type Project = {
   status?: string
   apkUrl?: string
   logo?: string
-  visual: 'dual-phone' | 'phone-duo' | 'laptop-phone'
+  visual: 'dual-phone' | 'phone-duo' | 'laptop-phone' | 'product-image'
+  heroImage?: { src: string; alt: string; width: number; height: number }
   screenshots: Screenshot[]
   caseStudy: {
     overview: string
@@ -38,8 +39,42 @@ export type Project = {
 // If you switch to .png/.jpg, update the `src` paths below.
 export const projects: Project[] = [
   {
-    slug: 'gymbros',
+    slug: 'recall',
     index: '01',
+    name: 'Recall',
+    subtitle: 'Your Second Memory',
+    description: 'Save what matters. Find it when you need it.',
+    accent: 'oklch(0.74 0.13 260)',
+    platforms: ['Android'],
+    features: ['Ask Recall', 'Where I Put It', 'Reminders', 'Temporary Click', 'Library', 'Replay', 'Google Drive Backup'],
+    tech: [],
+    visual: 'product-image',
+    heroImage: { src: '/projects/recall/recall-product-trio.png', alt: 'Recall Library, Home and Replay shown together', width: 3010, height: 2534 },
+    screenshots: [
+      { src: '/projects/recall/recall-ask.png', alt: 'Ask Recall confirming a reminder and saving the location of a pendrive', kind: 'framed' },
+      { src: '/projects/recall/recall-library.png', alt: 'Recall Library with saved locations, protected passwords, files, screenshots and Temporary Click', kind: 'framed' },
+      { src: '/projects/recall/recall-home.png', alt: 'Recall Home with an upcoming reminder, pinned collections, Temporary Click and a saved idea', kind: 'framed' },
+      { src: '/projects/recall/recall-replay.png', alt: 'Replay timeline showing saved locations, reminders and memory activity', kind: 'framed' },
+      { src: '/projects/recall/recall-drive-backup.png', alt: 'Google Drive Backup with completed backup status and automatic backup controls', kind: 'framed' },
+    ],
+    caseStudy: {
+      overview: 'Recall brings everyday memories, saved items and reminders into one place.',
+      problem: 'An idea, a file or the place you left something can be easy to forget. Keeping those details across different apps makes them harder to find.',
+      idea: 'Give those small details a home. Save them as they happen and return to them when you need them.',
+      built: [],
+      featureDetails: [],
+      designProcess: [],
+      challenges: [
+        { title: 'Clear actions', description: 'A conversation needs to make the next step clear. Ask Recall shows a reminder for confirmation and acknowledges when a location is saved.' },
+        { title: 'Many kinds of memories', description: 'Locations, files and temporary photos need distinct places while still feeling like one product. Named collections and pinned shortcuts keep them easy to reach.' },
+        { title: 'Visible backup state', description: 'Backup needs clear feedback. The screen brings completion status, the last backup and scheduling controls together.' },
+      ],
+      learnings: [],
+    },
+  },
+  {
+    slug: 'gymbros',
+    index: '02',
     name: 'GymBros',
     subtitle: 'Android Fitness & Workout Tracking App',
     version: 'Ignite',
@@ -115,7 +150,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'widgetlabs',
-    index: '02',
+    index: '03',
     name: 'WidgetLabs',
     subtitle: 'Customizable Android Widget Platform',
     version: 'Altair',
@@ -192,7 +227,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'flick',
-    index: '03',
+    index: '04',
     name: 'Flick',
     subtitle: 'Windows ↔ Android Local File Sharing',
     status: 'In Development',

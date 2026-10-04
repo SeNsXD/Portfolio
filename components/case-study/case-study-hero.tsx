@@ -37,7 +37,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
                   className="size-16 rounded-2xl border border-white/10 shadow-[0_12px_40px_-12px_var(--project-accent)]"
                   style={{ ['--project-accent' as string]: project.accent }}
                 />
-              ) : (
+              ) : project.slug !== 'recall' ? (
                 <div
                   aria-label={`${project.name} logo placeholder`}
                   role="img"
@@ -46,7 +46,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
                 >
                   {project.name.charAt(0)}
                 </div>
-              )}
+              ) : null}
               <div className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
                 <p>Project {project.index}</p>
                 <p className="mt-1">
@@ -86,7 +86,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
           </Reveal>
         </div>
 
-        <Reveal delay={240}>
+        {project.tech.length > 0 && <Reveal delay={240}>
           <TagList label="Technology" className="mt-10">
             {project.tech.map((t) => (
               <Tag key={t} tone="mono">
@@ -94,13 +94,13 @@ export function CaseStudyHero({ project }: { project: Project }) {
               </Tag>
             ))}
           </TagList>
-        </Reveal>
+        </Reveal>}
 
         <Reveal delay={300} className="group mt-14 overflow-hidden rounded-[2rem] border border-border bg-card/50">
           <ProjectVisual
             project={project}
             priority
-            large={project.slug === 'gymbros'}
+            large={project.slug === 'gymbros' || project.slug === 'recall'}
             className={
               project.slug === 'gymbros'
                 ? 'min-h-[460px] px-4 py-14 sm:min-h-[680px] sm:px-10'

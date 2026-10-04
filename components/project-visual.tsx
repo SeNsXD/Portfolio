@@ -21,6 +21,13 @@ export function ProjectVisual({
   const desktops = project.screenshots.filter((s) => s.kind === 'desktop')
   const framed = project.screenshots.filter((s) => s.kind === 'framed')
 
+  if (project.heroImage) {
+    return <div className={cn('relative flex items-center justify-center', className)}>
+      {large ? <Image {...project.heroImage} priority={priority} sizes="(min-width: 1024px) 1000px, 90vw" className="h-auto w-full object-contain" />
+        : <Image src={project.heroImage.src} alt={project.heroImage.alt} fill sizes="(min-width: 1024px) 550px, 90vw" className="object-contain p-6 sm:p-10" />}
+    </div>
+  }
+
   return (
     <div
       className={cn('relative flex items-center justify-center overflow-hidden', className)}

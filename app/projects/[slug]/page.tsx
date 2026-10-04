@@ -12,6 +12,7 @@ import {
 } from '@/components/case-study/case-study-body'
 import { NextProject } from '@/components/case-study/next-project'
 import { ScreenshotGallery } from '@/components/case-study/screenshot-gallery'
+import { RecallStory, RecallFinal } from '@/components/case-study/recall-story'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { getProject, projects } from '@/lib/projects'
@@ -44,6 +45,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <main>
         <CaseStudyHero project={project} />
         <StorySection project={project} />
+        {project.slug === 'recall' ? <>
+          <RecallStory project={project} />
+          <ChallengesSection project={project} />
+          <RecallFinal project={project} />
+        </> : <>
         <ScreenshotGallery project={project} />
         <BuiltSection project={project} />
         <FeaturesSection project={project} />
@@ -51,6 +57,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <ProcessSection project={project} />
         <ChallengesSection project={project} />
         <LearningsSection project={project} />
+        </>}
         <NextProject project={project} next={next} />
       </main>
       <SiteFooter />
