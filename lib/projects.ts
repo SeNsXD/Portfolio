@@ -42,6 +42,7 @@ export const projects: Project[] = [
     slug: 'recall',
     index: '01',
     name: 'Recall',
+    apkUrl: 'https://github.com/SeNsXD/Recall/releases/tag/Recall-V1.0',
     subtitle: 'Your Second Memory',
     description: 'Save what matters. Find it when you need it.',
     accent: 'oklch(0.74 0.13 260)',
