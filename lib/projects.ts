@@ -13,6 +13,8 @@ export type Project = {
   version?: string
   description: string
   accent: string
+  /** optional second theme colour, used for gradients */
+  accent2?: string
   platforms: string[]
   features: string[]
   tech: string[]
@@ -45,7 +47,9 @@ export const projects: Project[] = [
     apkUrl: 'https://github.com/SeNsXD/Recall/releases/tag/Recall-V1.0',
     subtitle: 'Your Second Memory',
     description: 'Save what matters. Find it when you need it.',
-    accent: 'oklch(0.74 0.13 260)',
+    accent: 'oklch(0.78 0.12 250)',
+    accent2: 'oklch(0.97 0.01 250)',
+    logo: '/projects/recall/recall-icon.png',
     platforms: ['Android'],
     features: ['Ask Recall', 'Where I Put It', 'Reminders', 'Temporary Click', 'Library', 'Replay', 'Google Drive Backup'],
     tech: [],
@@ -78,10 +82,11 @@ export const projects: Project[] = [
     index: '02',
     name: 'GymBros',
     subtitle: 'Android Fitness & Workout Tracking App',
-    version: 'Ignite',
+    version: 'Arctic 4.0',
     description:
       'A complete fitness companion designed around fast workout logging, progress tracking and a premium distraction-free experience.',
-    accent: 'oklch(0.70 0.19 255)',
+    accent: 'oklch(0.70 0.17 255)',
+    accent2: 'oklch(0.86 0.17 150)',
     platforms: ['Android'],
     features: [
       'Workout Tracking',
@@ -157,7 +162,8 @@ export const projects: Project[] = [
     version: 'Altair',
     description:
       'An Android widget platform designed to bring useful information and controls directly to the home screen through customizable widgets.',
-    accent: 'oklch(0.72 0.17 295)',
+    accent: 'oklch(0.70 0.20 295)',
+    accent2: 'oklch(0.72 0.20 325)',
     platforms: ['Android'],
     features: [
       'Media Widget',
@@ -226,7 +232,56 @@ export const projects: Project[] = [
       ],
     },
   },
-
+  {
+    slug: 'swift-tab',
+    index: '04',
+    name: 'Swift Tab',
+    subtitle: 'Windows 11 Taskbar Companion',
+    version: '0.4.0',
+    status: 'In Development',
+    description:
+      'A Windows 11 app that docks a compact pill to the taskbar, bringing media controls, earbud battery, weather, clipboard and a file shelf one glance away.',
+    accent: 'oklch(0.78 0.13 225)',
+    accent2: 'oklch(0.62 0.2 275)',
+    platforms: ['Windows 11'],
+    features: ['Media Controls', 'Earbuds Battery', 'Weather', 'Clipboard', 'Shelf', 'Control Center'],
+    tech: [],
+    visual: 'product-image',
+    heroImage: {
+      src: '/projects/swift-tab/swift-tab-preview.png',
+      alt: 'Swift Tab media controls in the Windows 11 taskbar, and the Swift Tab Control Center with toggles for each module',
+      width: 1930,
+      height: 540,
+    },
+    screenshots: [],
+    caseStudy: {
+      overview:
+        'Swift Tab turns the Windows 11 taskbar into a live activity surface. A compact pill docks beside the taskbar and shows what is happening right now, without opening another window.',
+      problem:
+        'Small everyday details, like the track that is playing, your earbuds’ battery or a link you just copied, are scattered across apps and corners of the system. Checking any of them means leaving what you were doing.',
+      idea:
+        'Dock one adaptive pill to the taskbar that surfaces only the activities you turn on, and give people a Control Center to switch each module on or off.',
+      built: [
+        'A media pill and media card with playback controls and a lyrics button',
+        'Connected earbud and headphone battery shown in the corner',
+        'Live temperature and sky conditions for the weather corner',
+        'A clipboard stash for copied text, links and images',
+        'A shelf to hold files on the pill and drag them out anywhere',
+        'A Control Center with a toggle for every module, plus appearance and behavior settings',
+      ],
+      featureDetails: [
+        { title: 'Media', description: 'Show the currently playing track in the pill and open a full media card with playback controls.' },
+        { title: 'Earbuds', description: 'Show connected Bluetooth earbuds and headphone battery in the corner.' },
+        { title: 'Weather', description: 'Show live temperature and sky conditions in the corner bar.' },
+        { title: 'Clipboard', description: 'Keep copied text, links and images in a clipboard stash.' },
+        { title: 'Shelf', description: 'Drop files onto the pill to hold them, then drag them out anywhere.' },
+        { title: 'Control Center', description: 'Toggle only the modules you need, and tune how Swift Tab looks and behaves.' },
+      ],
+      designProcess: [],
+      challenges: [],
+      learnings: [],
+    },
+  },
 ]
 
 export function getProject(slug: string) {

@@ -1,7 +1,7 @@
 export const site = {
   name: 'Rishabh Kumar',
   handle: 'RIXH4BH',
-  role: 'Product Builder • Android Developer • BBA Graduate',
+  role: 'Product Builder • Android & Windows Apps • BBA Graduate',
   email: 'rishabhkr.ind@gmail.com',
   resumeUrl: '/resume.pdf',
   socials: {
@@ -12,9 +12,7 @@ export const site = {
 }
 
 export const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'work', href: '/', label: 'Work' },
+  { id: 'info', href: '/info', label: 'Info' },
+  { id: 'contact', href: '/contact', label: 'Contact' },
 ] as const

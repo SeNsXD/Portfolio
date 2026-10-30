@@ -100,11 +100,13 @@ export function CaseStudyHero({ project }: { project: Project }) {
           <ProjectVisual
             project={project}
             priority
-            large={project.slug === 'gymbros' || project.slug === 'recall'}
+            large={project.slug === 'gymbros' || project.slug === 'recall' || project.slug === 'swift-tab'}
             className={
               project.slug === 'gymbros'
                 ? 'min-h-[460px] px-4 py-14 sm:min-h-[680px] sm:px-10'
-                : 'min-h-[420px] px-6 py-14 sm:min-h-[600px] sm:px-16'
+                : project.slug === 'swift-tab'
+                  ? 'min-h-[220px] px-4 py-8 sm:min-h-[340px] sm:px-10 sm:py-12'
+                  : 'min-h-[420px] px-6 py-14 sm:min-h-[600px] sm:px-16'
             }
           />
         </Reveal>

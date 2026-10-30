@@ -1,0 +1,268 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: dark;
+  --background: oklch(0.16 0.008 255);
+  --foreground: oklch(0.96 0.004 255);
+  --card: oklch(0.205 0.009 255);
+  --card-foreground: oklch(0.96 0.004 255);
+  --popover: oklch(0.205 0.009 255);
+  --popover-foreground: oklch(0.96 0.004 255);
+  --primary: oklch(0.95 0.005 255);
+  --primary-foreground: oklch(0.18 0.01 255);
+  --secondary: oklch(0.25 0.009 255);
+  --secondary-foreground: oklch(0.96 0.004 255);
+  --muted: oklch(0.25 0.009 255);
+  --muted-foreground: oklch(0.72 0.012 255);
+  --accent: oklch(0.27 0.009 255);
+  --accent-foreground: oklch(0.96 0.004 255);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.95 0.005 255);
+  --brand: oklch(0.95 0.005 255);
+  --brand-soft: oklch(1 0 0 / 8%);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  ::selection {
+    background: oklch(1 0 0 / 22%);
+  }
+}
+
+@keyframes glow-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, -3%, 0) scale(1.08);
+  }
+}
+
+@keyframes grid-pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 56px 56px;
+  }
+}
+
+.animate-glow-drift {
+  animation: glow-drift 16s ease-in-out infinite;
+}
+
+.animate-grid-pan {
+  animation: grid-pan 24s linear infinite;
+}
+
+@keyframes widget-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.widget-in {
+  opacity: 0;
+  animation: widget-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-glow-drift,
+  .animate-grid-pan {
+    animation: none;
+  }
+  .widget-in {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* GymBros moving phone mockups; mirrors the supplied NEW MOCKUPS animation. */
+.gymbros-moving-showcase {
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  border-radius: 2rem;
+  background: hsl(var(--card) / .28);
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+.gymbros-moving-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 2.2rem);
+  align-items: start;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.gymbros-moving-device:nth-child(3n + 2) {
+  transform: translateY(42px);
+}
+
+.gymbros-moving-phone {
+  position: relative;
+  padding: 6px;
+  border-radius: 42px;
+  border: 1px solid rgb(255 255 255 / .10);
+  background: #0b0b0b;
+  box-shadow: 0 30px 80px -20px rgb(0 0 0 / .8), inset 0 0 0 1px rgb(255 255 255 / .04);
+}
+
+.gymbros-moving-screen {
+  position: relative;
+  aspect-ratio: 1080 / 2400;
+  overflow: hidden;
+  border-radius: 37px;
+  background: #0a0b10;
+}
+
+.gymbros-moving-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  animation: gymbros-screen-scroll 15s ease-in-out infinite;
+  animation-delay: var(--mockup-delay, 0s);
+  will-change: transform;
+}
+
+.gymbros-moving-device.is-still .gymbros-moving-image {
+  animation: none;
+}
+
+.gymbros-moving-device:hover .gymbros-moving-image {
+  animation-play-state: paused;
+}
+
+.gymbros-camera-dot {
+  position: absolute;
+  z-index: 2;
+  top: 11px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 999px;
+  background: #000;
+  box-shadow: 0 0 0 2px #0b0c10;
+}
+
+@keyframes gymbros-screen-scroll {
+  0%,
+  14% {
+    transform: translateY(0);
+  }
+  46%,
+  62% {
+    transform: translateY(calc(var(--mockup-shift) * -1));
+  }
+  94%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .gymbros-moving-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 620px;
+  }
+  .gymbros-moving-device:nth-child(3n + 2) {
+    transform: none;
+  }
+  .gymbros-moving-device:nth-child(even) {
+    transform: translateY(30px);
+  }
+}
+
+@media (max-width: 620px) {
+  .gymbros-moving-grid {
+    grid-template-columns: 1fr;
+    max-width: 310px;
+    gap: 1.4rem;
+  }
+  .gymbros-moving-device:nth-child(even) {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gymbros-moving-image {
+    animation: none;
+  }
+}

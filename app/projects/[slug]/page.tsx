@@ -50,13 +50,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <ChallengesSection project={project} />
           <RecallFinal project={project} />
         </> : <>
-        <ScreenshotGallery project={project} />
-        <BuiltSection project={project} />
-        <FeaturesSection project={project} />
-        <TechSection project={project} />
-        <ProcessSection project={project} />
-        <ChallengesSection project={project} />
-        <LearningsSection project={project} />
+        {project.screenshots.length > 0 && <ScreenshotGallery project={project} />}
+        {project.caseStudy.built.length > 0 && <BuiltSection project={project} />}
+        {project.caseStudy.featureDetails.length > 0 && <FeaturesSection project={project} />}
+        {project.tech.length > 0 && <TechSection project={project} />}
+        {project.caseStudy.designProcess.length > 0 && <ProcessSection project={project} />}
+        {project.caseStudy.challenges.length > 0 && <ChallengesSection project={project} />}
+        {project.caseStudy.learnings.length > 0 && <LearningsSection project={project} />}
         </>}
         <NextProject project={project} next={next} />
       </main>

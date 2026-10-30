@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Download } from 'lucide-react'
 import type { Project } from '@/lib/projects'
 import { cn } from '@/lib/utils'
 import { LinkButton } from './link-button'
@@ -13,25 +13,18 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
   return (
     <article
       aria-labelledby={titleId}
-      className="group relative overflow-hidden rounded-[2rem] border border-border bg-card/60 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1.5 hover:border-white/15 hover:shadow-[0_40px_100px_-40px_rgba(0,0,0,0.9)]"
+      className="group relative overflow-hidden rounded-[2rem] border border-border bg-card/60"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px opacity-60"
-        style={{ background: `linear-gradient(90deg, transparent, ${project.accent}, transparent)` }}
-      />
       <div className={cn('grid lg:grid-cols-2', reverse && 'lg:[&>*:first-child]:order-2')}>
         <div className="flex flex-col p-7 sm:p-10 lg:p-12">
-          <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
-            <span style={{ color: project.accent }}>{project.index}</span>
-            <span aria-hidden="true" className="h-px w-8 bg-border" />
-            <span>{project.platforms.join(' · ')}</span>
+          <div className="flex items-center gap-3 text-sm text-muted-foreground">
+            <span>{project.platforms.join(', ')}</span>
             {project.status ? (
-              <span className="ml-auto rounded-lg border px-2.5 py-0.5 normal-case tracking-normal" style={{ borderColor: project.accent, color: project.accent }}>
+              <span className="ml-auto rounded-full border px-3 py-0.5" style={{ borderColor: project.accent, color: project.accent }}>
                 {project.status}
               </span>
             ) : project.version && (
-              <span className="ml-auto rounded-lg border border-border px-2.5 py-0.5 normal-case tracking-normal text-foreground/80">
+              <span className="ml-auto rounded-full border border-border px-3 py-0.5 text-foreground/80">
                 v. {project.version}
               </span>
             )}
@@ -44,7 +37,7 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
                 alt={`${project.name} app icon`}
                 width={52}
                 height={52}
-                className="size-12 rounded-xl border border-white/10 object-cover shadow-[0_10px_30px_-12px_var(--project-accent)] sm:size-[52px]"
+                className="size-12 rounded-[22%] border border-white/10 object-cover shadow-[0_10px_30px_-12px_var(--project-accent)] sm:size-[52px]"
                 style={{ ['--project-accent' as string]: project.accent }}
               />
             )}
@@ -80,6 +73,18 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
               View Project
               <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
             </LinkButton>
+            {project.apkUrl && (
+              <LinkButton
+                href={project.apkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                aria-label={`Download ${project.name} APK`}
+              >
+                <Download className="size-4" aria-hidden="true" />
+                Download APK
+              </LinkButton>
+            )}
             {project.githubUrl && (
               <LinkButton
                 href={project.githubUrl}
@@ -99,7 +104,10 @@ export function ProjectCard({ project, reverse }: { project: Project; reverse?: 
           href={`/projects/${project.slug}`}
           tabIndex={-1}
           aria-hidden="true"
-          className="relative min-h-[360px] border-t border-border bg-gradient-to-b from-white/[0.02] to-transparent sm:min-h-[460px] lg:border-t-0 lg:border-l"
+          className="relative min-h-[360px] border-t border-border sm:min-h-[460px] lg:border-t-0 lg:border-l"
+          style={{
+            background: `linear-gradient(135deg, color-mix(in oklch, ${project.accent} 20%, var(--card)), color-mix(in oklch, ${project.accent2 ?? project.accent} 14%, var(--card)))`,
+          }}
         >
           <ProjectVisual project={project} className="absolute inset-0 px-6 py-12 sm:px-12" />
         </Link>

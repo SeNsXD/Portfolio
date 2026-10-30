@@ -5,7 +5,7 @@ import { Send } from 'lucide-react'
 import { site } from '@/lib/site'
 
 const fieldClass =
-  'w-full rounded-2xl border border-border bg-white/[0.03] px-4 py-3 text-foreground placeholder:text-muted-foreground/60 transition-colors duration-300 hover:border-white/15 focus:border-brand/60 focus:bg-white/[0.05] focus:outline-none'
+  'w-full rounded-2xl border border-border bg-white/[0.03] px-4 py-3 text-foreground placeholder:text-muted-foreground/60 transition-colors duration-300 hover:border-white/15 focus:border-foreground/50 focus:bg-white/[0.05] focus:outline-none'
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'opened'>('idle')
@@ -48,15 +48,15 @@ export function ContactForm() {
           required
           rows={5}
           maxLength={3000}
-          placeholder="Tell me about your idea or opportunity..."
+          placeholder="Tell me about your idea or opportunity"
           className={`${fieldClass} resize-none`}
         />
       </div>
       <button
         type="submit"
-        className="group mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-brand px-6 font-medium text-primary-foreground transition-all duration-300 hover:brightness-110 hover:shadow-[0_14px_40px_-10px_var(--brand)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.98]"
+        className="group mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-6 font-medium text-primary-foreground transition-all duration-300 hover:brightness-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand active:scale-[0.98]"
       >
-        Send Message
+        Send message
         <Send className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
       </button>
       <p aria-live="polite" className="min-h-5 text-center text-sm text-muted-foreground">

@@ -7,18 +7,25 @@ const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rishabh-portfolio-wheat.vercel.app'),
   title: {
-    default: 'Rishabh Kumar | Product Builder & Android Developer',
+    default: 'Rishabh Kumar | Product Builder',
     template: '%s | Rishabh Kumar',
   },
   description:
-    'Portfolio of Rishabh Kumar, a product-focused developer designing and building useful Android experiences, including GymBros and WidgetLabs.',
+    'Portfolio of Rishabh Kumar, a product-focused builder designing and shipping useful Android and Windows apps, including GymBros, WidgetLabs, Recall and Swift Tab.',
   authors: [{ name: 'Rishabh Kumar' }],
-  keywords: ['Rishabh Kumar', 'Android Developer', 'Kotlin', 'Jetpack Compose', 'Product Builder', 'WinUI 3', 'Portfolio'],
+  keywords: ['Rishabh Kumar', 'Android Apps', 'Windows Apps', 'Product Builder', 'Product Design', 'Portfolio'],
   openGraph: {
-    title: 'Rishabh Kumar | Product Builder & Android Developer',
-    description: 'I design and build polished Android products from idea to release.',
+    title: 'Rishabh Kumar | Product Builder',
+    description: 'I design and ship polished Android and Windows apps, built with AI-assisted development.',
     type: 'website',
+    siteName: 'Rishabh Kumar',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rishabh Kumar | Product Builder',
+    description: 'I design and ship polished Android and Windows apps, built with AI-assisted development.',
   },
   icons: {
     icon: [
@@ -32,7 +39,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#121110',
+  themeColor: '#14161a',
 }
 
 export default function RootLayout({

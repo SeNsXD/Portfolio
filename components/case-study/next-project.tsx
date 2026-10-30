@@ -23,7 +23,7 @@ export function NextProject({ project, next }: { project: Project; next: Project
           ) : (
             <>
               <h2 className="text-2xl font-semibold text-foreground">Currently in development</h2>
-              <p className="mt-2 text-muted-foreground">{project.name} is actively being built for Windows and Android.</p>
+              <p className="mt-2 text-muted-foreground">{project.name} is actively being built for {project.platforms.join(' and ')}.</p>
             </>
           )}
         </div>
