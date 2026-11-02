@@ -13,6 +13,7 @@ import {
 import { NextProject } from '@/components/case-study/next-project'
 import { ScreenshotGallery } from '@/components/case-study/screenshot-gallery'
 import { RecallStory, RecallFinal } from '@/components/case-study/recall-story'
+import { SwiftTabStory, SwiftTabFinal } from '@/components/case-study/swift-tab-story'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { getProject, projects } from '@/lib/projects'
@@ -49,6 +50,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <RecallStory project={project} />
           <ChallengesSection project={project} />
           <RecallFinal project={project} />
+        </> : project.slug === 'swift-tab' ? <>
+          <SwiftTabStory project={project} />
+          <SwiftTabFinal project={project} />
         </> : <>
         {project.screenshots.length > 0 && <ScreenshotGallery project={project} />}
         {project.caseStudy.built.length > 0 && <BuiltSection project={project} />}

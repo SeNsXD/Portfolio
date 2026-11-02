@@ -24,7 +24,7 @@ export function ProjectVisual({
   if (project.heroImage) {
     return <div className={cn('relative flex items-center justify-center', className)}>
       {large ? <Image {...project.heroImage} priority={priority} sizes="(min-width: 1024px) 1000px, 90vw" className="h-auto w-full object-contain" />
-        : <Image src={project.heroImage.src} alt={project.heroImage.alt} fill sizes="(min-width: 1024px) 550px, 90vw" className="object-contain p-6 sm:p-10" />}
+        : <Image src={(project.cardImage ?? project.heroImage).src} alt={(project.cardImage ?? project.heroImage).alt} fill sizes="(min-width: 1024px) 550px, 90vw" className="object-contain p-6 sm:p-10" />}
     </div>
   }
 
