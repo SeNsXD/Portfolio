@@ -54,7 +54,7 @@ export const projects: Project[] = [
     accent2: 'oklch(0.97 0.01 250)',
     logo: '/projects/recall/recall-icon.png',
     platforms: ['Android'],
-    features: ['Echo Assistant', 'Where I Put It', 'Reminders & Alarms', 'Temporary Click', 'Library', 'Snap Text OCR', 'Google Drive Backup'],
+    features: ['Echo Assistant', 'Timeline', 'Where I Put It', 'Reminders & Alarms', 'Temporary Click', 'Library', 'Snap Text OCR', 'Google Drive Backup'],
     tech: [],
     visual: 'product-image',
     heroImage: { src: '/projects/recall/recall-product-trio.png', alt: 'Recall Library, Home and Echo shown together', width: 3010, height: 2534 },
@@ -62,7 +62,7 @@ export const projects: Project[] = [
       { src: '/projects/recall/recall-echo.png', alt: 'Echo on-device AI assistant recalling passport location and upcoming week events', kind: 'framed' },
       { src: '/projects/recall/recall-library.png', alt: 'Recall Library with protected passwords, files, receipts, warranties and collections', kind: 'framed' },
       { src: '/projects/recall/recall-home.png', alt: 'Recall Home with Your Socials, pinned collections, Temporary Click and sticky notes', kind: 'framed' },
-      { src: '/projects/recall/recall-replay.png', alt: 'Replay timeline showing saved locations, reminders and memory activity', kind: 'framed' },
+      { src: '/projects/recall/recall-timeline.png', alt: 'Timeline showing weekly memory activity, chronological history and saved notes', kind: 'framed' },
       { src: '/projects/recall/recall-drive-backup.png', alt: 'Google Drive Backup with completed backup status and automatic backup controls', kind: 'framed' },
     ],
     caseStudy: {

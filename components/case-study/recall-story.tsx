@@ -17,8 +17,9 @@ const stories = [
     { title: 'Your Socials & quick links', text: 'Access your connected profiles, brand links and essential shortcuts right from the top carousel.' },
     { title: 'Pinned vaults & Sticky Notes', text: 'Jump directly into your most-used collections, launch Temporary Click, or jot down thoughts on the sticky note pad.' },
   ] },
-  { title: 'Replay', intro: 'Return to the moments you saved.', details: [
-    { title: 'A timeline of activity', text: 'See memories, reminders and saved locations in time order. Filters let you revisit today, yesterday or earlier activity.' },
+  { title: 'Timeline', intro: 'Your life, remembered.', details: [
+    { title: 'Weekly glance & activity', text: 'Track every saved note, memory and deletion across your days with an at-a-glance weekly activity breakdown.' },
+    { title: 'Chronological memory stream', text: 'Review past actions grouped by Today, Yesterday or earlier dates, with flexible filters to reconstruct your days.' },
   ] },
   { title: 'Google Drive Backup', intro: 'A clear view of your backup.', details: [
     { title: 'Status and control', text: 'See when the last backup completed and start another when you need it. Choose daily or weekly automatic backups and whether to use an unmetered network.' },
