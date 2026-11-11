@@ -57,7 +57,8 @@ export const projects: Project[] = [
     features: ['Echo Assistant', 'Timeline', 'Where I Put It', 'Reminders & Alarms', 'Temporary Click', 'Library', 'Snap Text OCR', 'Google Drive Backup'],
     tech: [],
     visual: 'product-image',
-    heroImage: { src: '/projects/recall/recall-product-trio.png', alt: 'Recall Library, Home and Echo shown together', width: 3010, height: 2534 },
+    heroImage: { src: '/projects/recall/recall-hero.png', alt: 'Recall - Your second memory. Save it. Find it. Remember it.', width: 2048, height: 1024 },
+    cardImage: { src: '/projects/recall/recall-product-trio.png', alt: 'Recall Library, Home and Timeline shown together', width: 2400, height: 2560 },
     screenshots: [
       { src: '/projects/recall/recall-echo.png', alt: 'Echo on-device AI assistant recalling passport location and upcoming week events', kind: 'framed' },
       { src: '/projects/recall/recall-library.png', alt: 'Recall Library with protected passwords, files, receipts, warranties and collections', kind: 'framed' },

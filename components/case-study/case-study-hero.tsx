@@ -104,8 +104,8 @@ export function CaseStudyHero({ project }: { project: Project }) {
             className={
               project.slug === 'gymbros'
                 ? 'min-h-[460px] px-4 py-14 sm:min-h-[680px] sm:px-10'
-                : project.slug === 'swift-tab'
-                  ? 'px-4 py-8 sm:px-10 sm:py-12'
+                : project.slug === 'swift-tab' || project.slug === 'recall'
+                  ? 'px-4 py-6 sm:px-8 sm:py-8'
                   : 'min-h-[420px] px-6 py-14 sm:min-h-[600px] sm:px-16'
             }
           />

@@ -8,12 +8,12 @@ const stories = [
     { title: 'Natural memory search', text: 'Ask Echo where you left important belongings in plain language. Echo retrieves exact room and shelf placements instantly.' },
     { title: 'Upcoming agenda & reminders', text: 'Ask what is coming up to get an instant snapshot of scheduled reminders, warranty expirations and subscription renewals.' },
   ] },
-  { title: 'Library', intro: 'A place for every kind of memory.', details: [
+  { title: 'Library', intro: 'Everything in its place.', details: [
     { title: 'Everyday collections', text: 'Keep files, receipts, warranties, subscriptions and cards in named collections. Pin the ones you return to often.' },
     { title: 'Temporary Click', text: 'Keep a photo for now in its own collection. Ephemeral drops give temporary photos a clear place alongside permanent records.' },
     { title: 'Protected credentials', text: 'The Library secures passwords and personal ID cards with hardware keystore encryption, guarded behind biometric authentication.' },
   ] },
-  { title: 'Home', intro: 'Your daily dashboard, centered around your memory.', details: [
+  { title: 'Home', intro: 'Your day, at a glance.', details: [
     { title: 'Your Socials & quick links', text: 'Access your connected profiles, brand links and essential shortcuts right from the top carousel.' },
     { title: 'Pinned vaults & Sticky Notes', text: 'Jump directly into your most-used collections, launch Temporary Click, or jot down thoughts on the sticky note pad.' },
   ] },
