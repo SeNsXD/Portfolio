@@ -4,18 +4,18 @@ import { Reveal } from '../reveal'
 import { CaseSection } from './case-section'
 
 const stories = [
-  { title: 'Ask Recall', intro: 'Tell Recall what you want to remember.', details: [
-    { title: 'Where I Put It', text: 'Save where you left something while the detail is still fresh. Here, a pendrive on the table becomes a saved location.' },
-    { title: 'Reminders', text: 'Turn an intention into a reminder. Review the action before confirming it, then see that it has been saved.' },
+  { title: 'Echo Assistant', intro: 'On-device intelligence that never leaves your phone.', details: [
+    { title: 'Natural memory search', text: 'Ask Echo where you left important belongings in plain language. Echo retrieves exact room and shelf placements instantly.' },
+    { title: 'Upcoming agenda & reminders', text: 'Ask what is coming up to get an instant snapshot of scheduled reminders, warranty expirations and subscription renewals.' },
   ] },
   { title: 'Library', intro: 'A place for every kind of memory.', details: [
-    { title: 'Everyday collections', text: 'Keep files, screenshots, receipts, warranties and subscriptions in named collections. Pin the ones you return to often.' },
-    { title: 'Temporary Click', text: 'Keep a photo for now in its own collection. The shortcut gives temporary photos a clear place alongside things you want to keep.' },
-    { title: 'Passwords and privacy', text: 'The Library marks passwords as protected. This view shows the collection without exposing any login details.' },
+    { title: 'Everyday collections', text: 'Keep files, receipts, warranties, subscriptions and cards in named collections. Pin the ones you return to often.' },
+    { title: 'Temporary Click', text: 'Keep a photo for now in its own collection. Ephemeral drops give temporary photos a clear place alongside permanent records.' },
+    { title: 'Protected credentials', text: 'The Library secures passwords and personal ID cards with hardware keystore encryption, guarded behind biometric authentication.' },
   ] },
-  { title: 'Home', intro: 'What matters today, within reach.', details: [
-    { title: 'Reminders at a glance', text: 'An upcoming call takes the lead, with its time and countdown visible as soon as you open Recall.' },
-    { title: 'Pinned and recently kept', text: 'Reach favourite collections, open Temporary Click and return to a saved idea from one starting point. Recently kept has a place below.' },
+  { title: 'Home', intro: 'Your daily dashboard, centered around your memory.', details: [
+    { title: 'Your Socials & quick links', text: 'Access your connected profiles, brand links and essential shortcuts right from the top carousel.' },
+    { title: 'Pinned vaults & Sticky Notes', text: 'Jump directly into your most-used collections, launch Temporary Click, or jot down thoughts on the sticky note pad.' },
   ] },
   { title: 'Replay', intro: 'Return to the moments you saved.', details: [
     { title: 'A timeline of activity', text: 'See memories, reminders and saved locations in time order. Filters let you revisit today, yesterday or earlier activity.' },
