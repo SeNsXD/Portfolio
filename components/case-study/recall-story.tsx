@@ -21,6 +21,11 @@ const stories = [
     { title: 'Weekly glance & activity', text: 'Track every saved note, memory and deletion across your days with an at-a-glance weekly activity breakdown.' },
     { title: 'Chronological memory stream', text: 'Review past actions grouped by Today, Yesterday or earlier dates, with flexible filters to reconstruct your days.' },
   ] },
+  { title: 'Privacy & Security', intro: '100% on-device. Zero telemetry.', details: [
+    { title: 'Hardware Keystore encryption', text: 'Sensitive records, logins, passwords and ID cards are secured with hardware-backed AES-256-GCM in the Android Keystore.' },
+    { title: 'Biometric shielding', text: 'Guarded behind fingerprint or face authentication with built-in screen shielding against screenshots and recents previews.' },
+    { title: 'Zero trackers & no cloud required', text: 'Zero analytics SDKs, zero ad networks, and no mandatory cloud accounts. All your notes and photos stay strictly local.' },
+  ] },
   { title: 'Google Drive Backup', intro: 'A clear view of your backup.', details: [
     { title: 'Status and control', text: 'See when the last backup completed and start another when you need it. Choose daily or weekly automatic backups and whether to use an unmetered network.' },
   ] },
