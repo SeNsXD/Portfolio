@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Rishabh Kumar',
   },
   description:
-    'Portfolio of Rishabh Kumar, a product-focused builder designing and shipping useful Android and Windows apps, including GymBros, WidgetLabs, Recall and Swift Tab.',
+    'Portfolio of Rishabh Kumar, a product-focused builder designing and shipping useful Android and Windows apps, including GymBros, Recall and Swift Tab.',
   authors: [{ name: 'Rishabh Kumar' }],
   keywords: ['Rishabh Kumar', 'Android Apps', 'Windows Apps', 'Product Builder', 'Product Design', 'Portfolio'],
   openGraph: {

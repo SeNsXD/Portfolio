@@ -18,11 +18,11 @@ const widgets = [
     delay: 260,
   },
   {
-    name: 'WidgetLabs',
-    tagline: 'Home-screen widget platform',
-    icon: '/projects/widgetlabs/widgetlabs-icon.png',
-    bg: 'linear-gradient(135deg, oklch(0.42 0.2 290), oklch(0.62 0.22 320))',
-    fg: 'oklch(0.98 0.01 300)',
+    name: 'Swift Tab',
+    tagline: 'Windows 11 taskbar companion',
+    icon: '/projects/swift-tab/swift-tab-icon.png',
+    bg: 'linear-gradient(135deg, oklch(0.78 0.13 225), oklch(0.62 0.2 275))',
+    fg: 'oklch(0.15 0.05 250)',
     delay: 400,
   },
 ]
@@ -31,7 +31,7 @@ export function HeroPhone() {
   return (
     <div
       role="img"
-      aria-label="A phone home screen with the Recall, GymBros and WidgetLabs app icons"
+      aria-label="A phone home screen with the Recall, GymBros and Swift Tab app icons"
       className="mx-auto w-full max-w-[320px] rounded-[2.75rem] border border-border bg-card p-4 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.9)]"
     >
       <div aria-hidden="true" className="mx-auto mb-4 h-1.5 w-20 rounded-full bg-white/10" />

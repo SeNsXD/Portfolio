@@ -81,20 +81,7 @@ export function ProjectVisual({
             <PhoneMockup src={phones[1].src} alt={phones[1].alt} className="w-[42%] max-w-[240px] translate-y-8 rotate-3" />
           </div>
         )}
-        {project.visual === 'phone-duo' && project.slug === 'widgetlabs' && (
-          <div className="relative mx-auto flex w-full max-w-[1100px] items-center justify-center px-1 py-4 sm:px-4">
-            <Image
-              src="/projects/widgetlabs/widgetlabs-mockup-app-screens.png"
-              alt="WidgetLabs app screens showing Home, Earbuds, Media, Weather and Notification History"
-              width={1792}
-              height={1024}
-              priority={priority}
-              sizes="(min-width: 1024px) 1000px, 94vw"
-              className="h-auto w-full object-contain drop-shadow-[0_28px_55px_rgba(0,0,0,0.55)]"
-            />
-          </div>
-        )}
-        {project.visual === 'phone-duo' && project.slug !== 'widgetlabs' && framed.length >= 3 && (
+        {project.visual === 'phone-duo' && framed.length >= 3 && (
           <div className="relative mx-auto flex min-h-[410px] w-full max-w-[900px] items-center justify-center sm:min-h-[610px]">
             <FramedShot
               shot={framed[1]}

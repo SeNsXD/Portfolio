@@ -2,7 +2,7 @@ import { Reveal } from './reveal'
 import { SectionHeading } from './section-heading'
 
 const milestones = [
-  { period: '2026', title: 'Building GymBros, WidgetLabs & Swift Tab', current: true },
+  { period: '2026', title: 'Building GymBros, Swift Tab & Recall', current: true },
   { period: '2025', title: 'Digital Marketing & Business Projects' },
   { period: '2022-2025', title: 'BBA, Amity University Kolkata' },
 ]
