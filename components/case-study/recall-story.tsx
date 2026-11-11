@@ -21,36 +21,45 @@ const stories = [
     { title: 'Weekly glance & activity', text: 'Track every saved note, memory and deletion across your days with an at-a-glance weekly activity breakdown.' },
     { title: 'Chronological memory stream', text: 'Review past actions grouped by Today, Yesterday or earlier dates, with flexible filters to reconstruct your days.' },
   ] },
+  { title: 'Google Drive Backup', intro: 'A clear view of your backup.', details: [
+    { title: 'Status and control', text: 'See when the last backup completed and start another when you need it. Choose daily or weekly automatic backups and whether to use an unmetered network.' },
+  ] },
   { title: 'Privacy & Security', intro: '100% on-device. Zero telemetry.', details: [
     { title: 'Hardware Keystore encryption', text: 'Sensitive records, logins, passwords and ID cards are secured with hardware-backed AES-256-GCM in the Android Keystore.' },
     { title: 'Biometric shielding', text: 'Guarded behind fingerprint or face authentication with built-in screen shielding against screenshots and recents previews.' },
     { title: 'Zero trackers & no cloud required', text: 'Zero analytics SDKs, zero ad networks, and no mandatory cloud accounts. All your notes and photos stay strictly local.' },
   ] },
-  { title: 'Google Drive Backup', intro: 'A clear view of your backup.', details: [
-    { title: 'Status and control', text: 'See when the last backup completed and start another when you need it. Choose daily or weekly automatic backups and whether to use an unmetered network.' },
-  ] },
 ]
 
 export function RecallStory({ project }: { project: Project }) {
   return <>
-    {stories.map((story, i) => (
-      <CaseSection key={story.title} eyebrow={story.title} title={story.intro} accent={project.accent}>
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-          <Reveal className={i % 2 ? 'lg:order-2' : undefined}>
-            <div className="space-y-8">
-              {story.details.map(detail => <div key={detail.title}>
-                <h3 className="text-xl font-semibold text-foreground">{detail.title}</h3>
-                <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">{detail.text}</p>
-              </div>)}
-            </div>
-          </Reveal>
-          <Reveal className="rounded-[2rem] border border-border bg-card/50 p-4 sm:p-8">
-            <Image src={project.screenshots[i].src} alt={project.screenshots[i].alt} width={1148} height={2468}
-              sizes="(min-width: 640px) 400px, 90vw" className="mx-auto h-auto w-full max-w-[400px] object-contain" />
-          </Reveal>
-        </div>
-      </CaseSection>
-    ))}
+    {stories.map((story, i) => {
+      const isCard = project.screenshots[i]?.kind === 'card' || story.title === 'Privacy & Security'
+      return (
+        <CaseSection key={story.title} eyebrow={story.title} title={story.intro} accent={project.accent}>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
+            <Reveal className={i % 2 ? 'lg:order-2' : undefined}>
+              <div className="space-y-8">
+                {story.details.map(detail => <div key={detail.title}>
+                  <h3 className="text-xl font-semibold text-foreground">{detail.title}</h3>
+                  <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">{detail.text}</p>
+                </div>)}
+              </div>
+            </Reveal>
+            <Reveal className={isCard ? 'overflow-hidden rounded-[2rem] border border-border bg-card/50 p-3 sm:p-6' : 'rounded-[2rem] border border-border bg-card/50 p-4 sm:p-8'}>
+              <Image
+                src={project.screenshots[i].src}
+                alt={project.screenshots[i].alt}
+                width={isCard ? 1080 : 1148}
+                height={isCard ? 1920 : 2468}
+                sizes={isCard ? '(min-width: 640px) 460px, 90vw' : '(min-width: 640px) 400px, 90vw'}
+                className={isCard ? 'mx-auto h-auto w-full max-w-[440px] rounded-2xl object-contain shadow-2xl' : 'mx-auto h-auto w-full max-w-[400px] object-contain'}
+              />
+            </Reveal>
+          </div>
+        </CaseSection>
+      )
+    })}
   </>
 }
 

@@ -64,8 +64,8 @@ export const projects: Project[] = [
       { src: '/projects/recall/recall-library.png', alt: 'Recall Library with protected passwords, files, receipts, warranties and collections', kind: 'framed' },
       { src: '/projects/recall/recall-home.png', alt: 'Recall Home with Your Socials, pinned collections, Temporary Click and sticky notes', kind: 'framed' },
       { src: '/projects/recall/recall-timeline.png', alt: 'Timeline showing weekly memory activity, chronological history and saved notes', kind: 'framed' },
-      { src: '/projects/recall/recall-privacy.png', alt: 'Hardware keystore encryption and biometric shielding guarding private records', kind: 'framed' },
       { src: '/projects/recall/recall-drive-backup.png', alt: 'Google Drive Backup with completed backup status and automatic backup controls', kind: 'framed' },
+      { src: '/projects/recall/recall-privacy.png', alt: 'Hardware keystore encryption, screen shielding and 100% on-device architecture', kind: 'card' },
     ],
     caseStudy: {
       overview: 'Recall brings everyday memories, saved items and reminders into one place.',
